@@ -5,7 +5,12 @@
     <p>This is an example of working of this feature</p>
     <p>Here we can see that a camera is streaming the video and we are counting the number of vehicals passing thru</p>
     <p>By using ML, we can detect emergency vehicals and try to clear path/traffic ahead</p>
-    <img src="{{ url_for('video_feed') }}">
+    <h1>Original Video</h1>
+    <video width="50%" autoplay>
+        <source src="static/video.mp4" type="video/mp4">
+    </video>
+    <h1>Processed Video</h1>
+    <img width="50%" src="{{ url_for('video_feed') }}">
     <p>This example is made overnight and contains some bugs and false positives</p>
 </div>
 {% endblock %}

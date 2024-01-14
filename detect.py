@@ -24,7 +24,7 @@ def counting_cars():
     detect = []
     offset = 6  # allowable 6 pixel error
     counter = 0
-    while True:
+    while cap.isOpened():
         ret, frame = cap.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         blur = cv2.GaussianBlur(gray, (3, 3), 5)
@@ -34,10 +34,16 @@ def counting_cars():
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
         dilatada = cv2.morphologyEx(dilat, cv2.MORPH_CLOSE, kernel)
         dilatada = cv2.morphologyEx(dilatada, cv2.MORPH_CLOSE, kernel)
-        counterSahpe, h = cv2.findContours(dilatada, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        counterSahpe, h = cv2.findContours(
+            dilatada, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE
+        )
 
         cv2.line(
-            frame, (25, count_line_position), (1200, count_line_position), (255, 127, 0), 3
+            frame,
+            (25, count_line_position),
+            (1200, count_line_position),
+            (255, 127, 0),
+            3,
         )
 
         for i, c in enumerate(counterSahpe):

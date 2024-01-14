@@ -8,6 +8,7 @@ flask = "*"
 python-dotenv = "*"
 opencv-python = "*"
 numpy = "*"
+black = "*"
 
 [dev-packages]
 
