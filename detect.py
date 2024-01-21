@@ -1,3 +1,4 @@
+# Due to lack of time we are currently using OpenCV-Python but in future we will be using ML Algos to detect vehicals
 import cv2
 import numpy as np
 
