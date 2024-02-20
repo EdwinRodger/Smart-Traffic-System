@@ -14,6 +14,11 @@ def technology():
     return render_template("technology.html")
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
 @app.route("/camera")
 def camera():
     return render_template("camera.html")
