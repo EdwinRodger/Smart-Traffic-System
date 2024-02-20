@@ -1,5 +1,6 @@
 from flask import Flask, render_template, Response
-from detect import counting_cars
+from vehicle import counting_cars
+# from detect import counting_cars
 
 app = Flask(__name__)
 

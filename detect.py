@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 # Web Capture
-cap = cv2.VideoCapture("static/video.mp4")
+cap = cv2.VideoCapture("static/videoTrim.mp4")
 
 min_width = 80
 min_height = 80
