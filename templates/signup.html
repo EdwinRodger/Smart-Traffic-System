@@ -7,18 +7,19 @@
             <div class="col-md-6">
                 <div class="card" style="--bs-card-border-color: #ffde59; background-color: #ffde59">
                     <div class="card-body" style="min-height: 500px;">
-                        <h1 class="card-title text-center">Create New Account</h1>
+                        <h1 class="card-title text-center">Sign In to Account</h1>
                         <form method="post" action="/sign-up" data-bitwarden-watching="1">
                             <div class="mb-3">
-                                <label for="username" class="form-label">Unique ID</label>
+                                <label for="username" class="form-label">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" required="">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" required="">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
                             </div>
+                            <!-- <a href="{{ url_for('demo') }}" class="btn btn-primary" role="button">Sign Up</a> -->
                         </form>
-                        <a href="{{ url_for('demo') }}" class="btn btn-primary" role="button">Sign Up</a>
                     </div>
                 </div>
             </div>
