@@ -1,20 +1,23 @@
 from flask import Flask, render_template, Response, request, redirect, url_for
 from vehicle import counting_cars
+
 # from detect import counting_cars
 import flask_login
 
 app = Flask(__name__)
 
-app.secret_key = 'super secret string'
+app.secret_key = "super secret string"
 
 login_manager = flask_login.LoginManager()
 login_manager.init_app(app)
 
 # Our mock database.
-users = {'foobar': {'password': 'secret'}}
+users = {"foobar": {"password": "secret"}}
+
 
 class User(flask_login.UserMixin):
     pass
+
 
 @login_manager.user_loader
 def user_loader(username):
@@ -28,7 +31,7 @@ def user_loader(username):
 
 @login_manager.request_loader
 def request_loader(request):
-    username = request.form.get('username')
+    username = request.form.get("username")
     if username not in users:
         return
 
@@ -36,7 +39,8 @@ def request_loader(request):
     user.id = username
     return user
 
-''' TODO
+
+""" TODO
 How do we optimise?
 Work on content
 How we authorise user and why?
@@ -44,7 +48,8 @@ Imporove tech stack tab
 Step by step instruction how we add username and how someone can access website
 Make test users and make sign up page usable
 Make future enhancements
-'''
+"""
+
 
 @app.route("/")
 def homepage():
@@ -61,24 +66,25 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/sign-up", methods=['GET', 'POST'])
+@app.route("/sign-up", methods=["GET", "POST"])
 def signup():
-    if request.method == 'GET':
+    if request.method == "GET":
         return render_template("signup.html")
-    
-    username = request.form['username']
-    if username in users and request.form['password'] == users[username]['password']:
+
+    username = request.form["username"]
+    if username in users and request.form["password"] == users[username]["password"]:
         user = User()
         user.id = username
         flask_login.login_user(user)
-        return redirect(url_for('demo'))
+        return redirect(url_for("demo"))
 
-    return redirect(url_for('signup'))
+    return redirect(url_for("signup"))
 
-@app.route('/logout')
+
+@app.route("/logout")
 def logout():
     flask_login.logout_user()
-    return redirect(url_for('homepage'))
+    return redirect(url_for("homepage"))
 
 
 @app.route("/demo")
