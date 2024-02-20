@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response, request, redirect, url_for
+from flask import Flask, render_template, Response, request, redirect, url_for, flash
 from vehicle import counting_cars
 
 # from detect import counting_cars
@@ -13,7 +13,7 @@ login_manager.init_app(app)
 
 # Our mock database.
 users = {
-    "foobar": {"password": "secret"},
+    "root": {"password": "root"},
     "admin": {"password": "admin"},
     "test": {"password": "test"},
 }
@@ -80,8 +80,10 @@ def signup():
         user = User()
         user.id = username
         flask_login.login_user(user)
+        flash("Successfully signed in", "info")
         return redirect(url_for("demo"))
 
+    flash("Invalid username or password", "danger")
     return redirect(url_for("signup"))
 
 
