@@ -24,9 +24,9 @@ def signup():
     return render_template("signup.html")
 
 
-@app.route("/camera")
-def camera():
-    return render_template("camera.html")
+@app.route("/demo")
+def demo():
+    return render_template("demo.html")
 
 
 @app.route("/video_feed")
