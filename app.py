@@ -19,6 +19,11 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/sign-up")
+def signup():
+    return render_template("signup.html")
+
+
 @app.route("/camera")
 def camera():
     return render_template("camera.html")
