@@ -96,5 +96,55 @@
             </a>
         </div>
     </section>
+    <hr class="mt-5">
+    <div>
+        <h1>
+            <u>
+                Functionality
+            </u>
+        </h1>
+    </div>
+    <div>
+        <h2>1. Web Pages:</h2>
+        <ul>
+            <li>The website has several routes defined using Flask's @app.route decorator, such as "/" for
+                the homepage, "/technology" for the technology page, "/about" for the about page,
+                etc.</li>
+            <li>The render_template function is used to render HTML templates for these routes.</li>
+        </ul>
+        <h2>2. Authentication System:</h2>
+        <ul>
+            <li>The website uses Flask and Flask-Login for authentication. Flask-Login is an extension for managing user
+                sessions.</li>
+            <li>There is a User class that extends flask_login.UserMixin, which helps in managing user sessions.</li>
+            <li>Users and their passwords are stored in a mock database (users dictionary).</li>
+            <li>New users are added through backend because we need to make sure only authorised users can access the whole website.</li>
+            <li>The signup route handles both GET and POST requests. For a GET request, it renders the signup page, and
+                for a POST request, it checks the provided username and password, logs in the user using Flask-Login if
+                the credentials are valid, and redirects to the demo page.</li>
+        </ul>
+        <h2>3. Demo Page:</h2>
+        <ul>
+            <li>The /demo route is protected using @flask_login.login_required, ensuring that only authenticated users
+                can access the demo page.</li>
+            <li>The demo route renders the "demo.html" template, which can display the processed video stream.
+            </li>
+        </ul>
+        <h2>4. Video Processing:</h2>
+        <ul>
+            <li>The /video_feed route is used for streaming video content. It utilizes the counting_cars generator
+                function defined in the vehicle.py file.</li>
+            <li>The counting_cars function reads frames from a video file (static\videoTrim.mp4), performs background
+                subtraction, contour detection, and object tracking to count the number of vehicles passing a specified
+                line.</li>
+            <li>The processed video frames are encoded as JPEG images and sent as a multipart response to the client
+                using Flask's Response class. This allows for real-time streaming of the processed video.</li>
+        </ul>
+        <h2>5. Logout:</h2>
+        <ul>
+            <li>The /logout route logs out the current user using flask_login.logout_user() and redirects to the
+                homepage.</li>
+        </ul>
+    </div>
 </div>
 {% endblock %}
