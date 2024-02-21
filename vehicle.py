@@ -11,19 +11,19 @@ def pega_centro(x, y, w, h):
     return cx, cy
 
 
-cap = cv2.VideoCapture("static\\videoTrim.mp4")
-subtracao = cv2.bgsegm.createBackgroundSubtractorMOG()
 
 
 def counting_cars():
-    largura_min = 80  # Largura minima do retangulo
-    altura_min = 80  # Altura minima do retangulo
+    cap = cv2.VideoCapture("static\\videoTrim.mp4")
+    subtracao = cv2.bgsegm.createBackgroundSubtractorMOG()
+    largura_min = 80  
+    altura_min = 80  
 
-    offset = 6  # Erro permitido entre pixel
+    offset = 6  
 
-    pos_linha = 550  # Posição da linha de contagem
+    pos_linha = 550  
 
-    delay = 60  # FPS do vídeo
+    delay = 60  
 
     detec = []
     carros = 0
