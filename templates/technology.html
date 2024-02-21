@@ -1,22 +1,100 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <div class="container animate__animated animate__bounceInUp">
-        <h1>Technologies used -</h1>
-        <ul>
-            <li><h2>Python</h2></li>
-            <ul>
-                <li><h3>Flask</h3></li>
-                <li><h3>OpenCV-Python</h3></li>
-                <li><h3>Numpy</h3></li>
-            </ul>
-            <li><h2>Hosting</h2></li>
-            <ul>
-                <li><h3>pythonanywhere.com</h3></li>
-            </ul>
-            <li><h2>Code Storage</h2></li>
-            <ul>
-                <li><h3>Github</h3></li>
-            </ul>
-        </ul>
-    </div>
+<div class="container animate__animated animate__bounceInUp pb-5">
+    <h1>Tech Stack</h1>
+    <section class="mt-3">
+        <h2>Language</h2>
+        <div class="d-flex">
+            <a target="_blank" href="https://www.python.org/"
+                class="p-3 border border-black border-5 col-md-4 justify-content-center text-decoration-none text-reset">
+                <div>
+                    <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png"
+                        alt="Python Logo" height="120" class="row mx-auto">
+                    <b class="row justify-content-center fs-3 mt-3">Python</b>
+                </div>
+            </a>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                class="p-3 border border-black border-5 col-md-4 justify-content-center text-decoration-none text-reset ms-3">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+                        alt="HTML5 Logo" height="120" class="row mx-auto">
+                    <b class="row justify-content-center fs-3 mt-3">HTML</b>
+                </div>
+            </a>
+            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                class="p-3 border border-black border-5 col-md-4 justify-content-center text-decoration-none text-reset ms-3">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+                        alt="CSS3 Logo" height="120" class="row mx-auto">
+                    <b class="row justify-content-center fs-3 mt-3">CSS</b>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="mt-3">
+        <h2>Libraries and Frameworks</h2>
+        <div class="d-flex">
+            <a target="_blank" href="https://flask.palletsprojects.com/"
+                class="p-3 border border-black border-5 col-md-4 justify-content-center text-decoration-none text-reset">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="Flask Logo"
+                        height="120" class="row mx-auto">
+                    <b class="row justify-content-center fs-3 mt-3">Flask</b>
+                </div>
+            </a>
+            <a target="_blank" href="https://github.com/numpy/numpy"
+                class="p-3 border border-black border-5 col-md-4 justify-content-center text-decoration-none text-reset ms-3">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" alt="Flask Logo"
+                        height="120" class="row mx-auto">
+                    <b class="row justify-content-center fs-3 mt-3">Numpy</b>
+                </div>
+            </a>
+            <a target="_blank" href="https://github.com/opencv/opencv-python"
+                class="p-3 border border-black border-5 col-md-4 justify-content-center text-decoration-none text-reset ms-3">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg"
+                        alt="Flask Logo" height="120" class="row mx-auto">
+                    <b class="row justify-content-center fs-3 mt-3">OpenCV-Python</b>
+                </div>
+            </a>
+        </div>
+        <div class="d-flex">
+            <a target="_blank" href="https://getbootstrap.com/"
+                class="p-3 border border-black border-5 col-md-4 justify-content-center text-decoration-none text-reset mt-3">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg"
+                        alt="Bootstrap Logo" height="120" class="row mx-auto">
+                    <b class="row justify-content-center fs-3 mt-3">Bootstrap</b>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="mt-3">
+        <h2>Hosting</h2>
+        <div class="d-flex">
+            <a target="_blank" href="https://www.pythonanywhere.com/"
+                class="p-3 border border-black border-5 col-md-8 justify-content-center text-decoration-none text-reset">
+                <div>
+                    <img src="https://www.pythonanywhere.com/static/anywhere/images/PA-logo.svg"
+                        alt="pythonanywhere.com Logo" height="120" class="row mx-auto">
+                    <b class="row justify-content-center fs-3 mt-3">PythonAnywhere</b>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="mt-3">
+        <h2>Code Storage</h2>
+        <div class="d-flex">
+            <a target="_blank" href="https://github.com/EdwinRodger/Traffic-Detection-System"
+                class="p-3 border border-black border-5 col-md-4 justify-content-center text-decoration-none text-reset">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1024px-GitHub_Invertocat_Logo.svg.png"
+                        alt="Github Logo" height="120" class="row mx-auto">
+                    <b class="row justify-content-center fs-3 mt-3">Github</b>
+                </div>
+            </a>
+        </div>
+    </section>
+</div>
 {% endblock %}
