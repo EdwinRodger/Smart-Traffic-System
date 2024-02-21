@@ -44,15 +44,6 @@ def request_loader(request):
     return user
 
 
-""" TODO
-How do we optimise?
-Work on content
-How we authorise user and why?
-Imporove tech stack tab
-Step by step instruction how we add username and how someone can access website
-Make test users and make sign up page usable
-Make future enhancements
-"""
 
 
 @app.route("/")
@@ -63,6 +54,11 @@ def homepage():
 @app.route("/technology")
 def technology():
     return render_template("technology.html")
+
+
+@app.route("/future-enhancements")
+def future_enhancements():
+    return render_template("future-enhancements.html")
 
 
 @app.route("/about")
