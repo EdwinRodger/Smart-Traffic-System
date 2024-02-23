@@ -1,15 +1,26 @@
 {% extends 'layout.html' %}
 {% block content %}
-<div class="container animate__animated animate__fadeInRightBig mb-5">
-    <h1>Camera</h1>
-    <p>This is an example of working of this feature</p>
-    <p>Here we can see that a camera is streaming the video and we are counting the number of vehicals passing thru</p>
-    <p>By using ML, we can detect emergency vehicals and try to clear path/traffic ahead</p>
-    <h1>Original Video</h1>
-    <video width="50%" autoplay muted>
-        <source src="static/videoTrim.mp4" type="video/mp4">
-    </video>
-    <h1>Processed Video</h1>
-    <img width="50%" src="{{ url_for('video_feed') }}">
+<div class="container mb-5">
+    <div class="animate__animated animate__fadeInRightBig">
+        <div>
+            <h1>Camera</h1>
+            <p>This is an example of working of this feature</p>
+        </div>
+        <div>
+            <h1>Original Video</h1>
+            <p>This is the original feed that our camera is getting from the street</p>
+            <div>
+                <video width="50%" autoplay muted>
+                    <source src="static/videoTrim.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div>
+            <h1>Processed Video</h1>
+            <p>By using vehicle recognition (which can be achived by using ML), we detect the vehicles and try to set
+                the timings of signals such that the traffic may pass as efficiently as possible</p>
+            <img width="50%" src="{{ url_for('video_feed') }}">
+        </div>
+    </div>
 </div>
 {% endblock %}
