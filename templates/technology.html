@@ -107,10 +107,12 @@
     <div>
         <h2>1. Web Pages:</h2>
         <ul>
+            <li>Flask is used to make this website.</li>
             <li>The website has several routes defined using Flask's @app.route decorator, such as "/" for
                 the homepage, "/technology" for the technology page, "/about" for the about page,
                 etc.</li>
             <li>The render_template function is used to render HTML templates for these routes.</li>
+            <li>Jinja templates are used to update the HTML content dynamically.</li>
         </ul>
         <h2>2. Authentication System:</h2>
         <ul>
@@ -118,19 +120,32 @@
                 sessions.</li>
             <li>There is a User class that extends flask_login.UserMixin, which helps in managing user sessions.</li>
             <li>Users and their passwords are stored in a mock database (users dictionary).</li>
-            <li>New users are added through backend because we need to make sure only authorised users can access the whole website.</li>
+            <li>New users are added through backend because we need to make sure only authorised users can access the
+                whole website.</li>
+            <li>We don't want anyone to create an account and access the website and thats why we add users using
+                backend.</li>
             <li>The signup route handles both GET and POST requests. For a GET request, it renders the signup page, and
                 for a POST request, it checks the provided username and password, logs in the user using Flask-Login if
-                the credentials are valid, and redirects to the demo page.</li>
+                the credentials are valid, and redirects to the camera page.</li>
         </ul>
-        <h2>3. Demo Page:</h2>
+        <h2>3. Camera Page:</h2>
+        <ul>
+            <li>The /cameras route is protected using @flask_login.login_required, ensuring that only authenticated
+                users can access the cameras page.</li>
+            <li>The cameras route renders the "cameras.html" template, which displays a table that has data of all the
+                installed cameras and their location.</li>
+            <li>Clicking on desired camera opens the real time feed of that area.</li>
+        </ul>
+        <h2>4. Demo Page:</h2>
         <ul>
             <li>The /demo route is protected using @flask_login.login_required, ensuring that only authenticated users
                 can access the demo page.</li>
-            <li>The demo route renders the "demo.html" template, which can display the processed video stream.
-            </li>
+            <li>The demo route renders the "demo.html" template, which can display the processed video stream.</li>
+            <li>The processed video stream is encoded as JPEG images, the encoding is done till the end of the video.
+                Refresh the page to see the encoded video again.</li>
+            <li>The demo page is used as prototype and will change in future.</li>
         </ul>
-        <h2>4. Video Processing:</h2>
+        <h2>5. Video Processing:</h2>
         <ul>
             <li>The /video_feed route is used for streaming video content. It utilizes the counting_cars generator
                 function defined in the vehicle.py file.</li>
@@ -140,7 +155,7 @@
             <li>The processed video frames are encoded as JPEG images and sent as a multipart response to the client
                 using Flask's Response class. This allows for real-time streaming of the processed video.</li>
         </ul>
-        <h2>5. Logout:</h2>
+        <h2>6. Logout:</h2>
         <ul>
             <li>The /logout route logs out the current user using flask_login.logout_user() and redirects to the
                 homepage.</li>
