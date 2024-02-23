@@ -77,7 +77,7 @@ def signup():
         user.id = username
         flask_login.login_user(user)
         flash("Successfully signed in", "info")
-        return redirect(url_for("demo"))
+        return redirect(url_for("cameras"))
 
     flash("Invalid username or password", "danger")
     return redirect(url_for("signup"))
@@ -87,6 +87,12 @@ def signup():
 def logout():
     flask_login.logout_user()
     return redirect(url_for("homepage"))
+
+
+@app.route("/cameras")
+@flask_login.login_required
+def cameras():
+    return render_template("cameras.html")
 
 
 @app.route("/demo")
